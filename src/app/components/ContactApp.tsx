@@ -188,8 +188,8 @@ export default function ContactApp({ recipientEmail }: ContactAppProps) {
 
       <Field required label="Message">
         <TextField
-          minRows={5}
           multiline
+          minRows={5}
           placeholder="Tell me what you would like to discuss"
           value={form.message}
           onChange={onFieldChange("message")}

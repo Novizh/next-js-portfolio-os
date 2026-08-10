@@ -9,10 +9,7 @@ import {
 } from "@mui/material";
 import { IconExternalLink, IconMoodHeart } from "@tabler/icons-react";
 
-import {
-  PROJECT_ASSOCIATION_LOGO_SIZE,
-  PROJECTS,
-} from "libs/constants/user";
+import { PROJECT_ASSOCIATION_LOGO_SIZE, PROJECTS } from "libs/constants/user";
 
 export default function ProjectsApp() {
   return (
@@ -85,11 +82,7 @@ export default function ProjectsApp() {
             </Stack>
 
             <Stack spacing={0.75}>
-              <Typography
-                color="text.primary"
-                fontWeight={600}
-                variant="body2"
-              >
+              <Typography color="text.primary" fontWeight={600} variant="body2">
                 Skills
               </Typography>
               <Stack direction="row" flexWrap="wrap" sx={{ gap: 0.75 }}>
@@ -141,8 +134,9 @@ export default function ProjectsApp() {
             </Typography>
             <Typography color="text.secondary" variant="body2">
               Trick question - they&apos;re all very real. Now that you&apos;ve
-              seen what I&apos;ve built, fire up the <span style={{ fontWeight: "bold" }}>Talk to Me</span> app from the
-              desktop and let&apos;s get in touch.
+              seen what I&apos;ve built, fire up the{" "}
+              <span style={{ fontWeight: "bold" }}>Talk to Me</span> app from
+              the desktop and let&apos;s get in touch.
             </Typography>
           </Stack>
         </Stack>

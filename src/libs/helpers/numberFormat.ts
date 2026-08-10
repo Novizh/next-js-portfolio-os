@@ -20,7 +20,9 @@ export function currencyFormat(value: number, shorten?: boolean): string {
 
   const absoluteValue = Math.abs(numericValue);
 
-  const item = lookup.find((unit) => absoluteValue >= unit.value) || lookup[lookup.length - 1];
+  const item =
+    lookup.find((unit) => absoluteValue >= unit.value) ||
+    lookup[lookup.length - 1];
   const shortened = absoluteValue / item.value;
   const decimal = item.value === 1 ? 0 : shortened >= 100 ? 0 : 1;
   const compact = Number(shortened.toFixed(decimal));
