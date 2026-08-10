@@ -1,0 +1,52 @@
+{
+  "name": "nextjs-boilerplate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "export NEXT_PUBLIC_APP_ENV=development && NEXT_PUBLIC_APP_MODE=light && next dev --turbopack",
+    "dev:staging": "export NEXT_PUBLIC_APP_ENV=staging && NEXT_PUBLIC_APP_MODE=light && next dev --turbopack",
+    "dev:production": "export NEXT_PUBLIC_APP_ENV=production && NEXT_PUBLIC_APP_MODE=light && next dev --turbopack",
+    "build:development": "export NEXT_PUBLIC_APP_ENV=development && next build",
+    "build:staging": "export NEXT_PUBLIC_APP_ENV=staging && next build",
+    "build:production": "export NEXT_PUBLIC_APP_ENV=production && next build",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --fix"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/lab": "7.0.1-beta.25",
+    "@mui/material": "^7.1.2",
+    "@reduxjs/toolkit": "^2.8.2",
+    "@tabler/icons-react": "^3.34.0",
+    "axios": "^1.13.2",
+    "i18next": "^25.3.2",
+    "moment": "^2.30.1",
+    "next": "15.3.4",
+    "next-i18next": "^15.4.2",
+    "next-redux-wrapper": "^8.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-draggable": "^4.5.0",
+    "react-i18next": "^15.6.0",
+    "react-redux": "^9.2.0",
+    "react-rnd": "^10.5.3",
+    "react-toastify": "^11.0.5"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4.1.10",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.10",
+    "typescript": "^5"
+  }
+}
