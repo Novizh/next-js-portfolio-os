@@ -33,7 +33,7 @@ export const DESKTOP_APPS: DesktopApp[] = [
     title: "Projects",
   },
   {
-    defaultSize: { height: 710, width: 700 },
+    defaultSize: { height: 720, width: 700 },
     description: "Send email and collaboration inquiry",
     icon: IconMail,
     id: "contact",
