@@ -1,71 +1,91 @@
 import moment from "moment";
+import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
-export function dateFormat(
-  value?: Date | string | null,
-  format = "DD/MM/YYYY",
-) {
-  moment.locale("id");
-  if (!value) return moment().format(format);
-
-  return moment(value).format(format);
+function normalizeLanguage(language?: string): "en" | "id" {
+  return language?.toLowerCase().startsWith("id") ? "id" : "en";
 }
 
-export function formatCutOffDate(date: Date): string {
-  return date.toLocaleString("id-ID", {
-    day: "2-digit",
-    month: "long",
-    year: "numeric",
-  });
-}
+export function useDateFormat() {
+  const { i18n } = useTranslation();
+  const language = normalizeLanguage(i18n.resolvedLanguage ?? i18n.language);
+  const locale = language === "id" ? "id-ID" : "en-GB";
 
-export function formatTransactionDate(date: Date): string {
-  return date.toLocaleString("id-ID", {
-    month: "long",
-    year: "numeric",
-  });
-}
+  return useMemo(() => {
+    function dateFormat(value?: Date | string | null, format = "DD/MM/YYYY") {
+      if (!value) return moment().locale(language).format(format);
 
-export function formatTransactionDateShort(date: Date): string {
-  return date.toLocaleString("id-ID", {
-    month: "short",
-    year: "numeric",
-  });
-}
+      return moment(value).locale(language).format(format);
+    }
 
-export function formatTransactionDateTime(date: Date | string): string {
-  const parsedDate = typeof date === "string" ? new Date(date) : date;
-  const formatted = parsedDate.toLocaleString("id-ID", {
-    day: "2-digit",
-    month: "short",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
+    function formatCutOffDate(date: Date): string {
+      return date.toLocaleString(locale, {
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+      });
+    }
 
-  return `${formatted} WIB`;
-}
+    function formatTransactionDate(date: Date): string {
+      return date.toLocaleString(locale, {
+        month: "long",
+        year: "numeric",
+      });
+    }
 
-export function formatTransactionDetailsDate(date: Date | string): string {
-  const parsedDate = typeof date === "string" ? new Date(date) : date;
-  const formatted = parsedDate.toLocaleString("id-ID", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  });
+    function formatTransactionDateShort(date: Date): string {
+      return date.toLocaleString(locale, {
+        month: "short",
+        year: "numeric",
+      });
+    }
 
-  return `${formatted}`;
-}
+    function formatTransactionDateTime(date: Date | string): string {
+      const parsedDate = typeof date === "string" ? new Date(date) : date;
+      const formatted = parsedDate.toLocaleString(locale, {
+        day: "2-digit",
+        month: "short",
+        hour: "2-digit",
+        minute: "2-digit",
+      });
 
-export function formatTransactionDetailsDateTime(date: Date | string): string {
-  const parsedDate = typeof date === "string" ? new Date(date) : date;
-  const formatted = parsedDate.toLocaleString("id-ID", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
+      return `${formatted} WIB`;
+    }
 
-  return `${formatted} WIB`;
+    function formatTransactionDetailsDate(date: Date | string): string {
+      const parsedDate = typeof date === "string" ? new Date(date) : date;
+      const formatted = parsedDate.toLocaleString(locale, {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+      });
+
+      return `${formatted}`;
+    }
+
+    function formatTransactionDetailsDateTime(date: Date | string): string {
+      const parsedDate = typeof date === "string" ? new Date(date) : date;
+      const formatted = parsedDate.toLocaleString(locale, {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+
+      return `${formatted} WIB`;
+    }
+
+    return {
+      dateFormat,
+      formatCutOffDate,
+      formatTransactionDate,
+      formatTransactionDateShort,
+      formatTransactionDateTime,
+      formatTransactionDetailsDate,
+      formatTransactionDetailsDateTime,
+    };
+  }, [language, locale]);
 }
 
 export function getCutOffDate(cutOffDay: number): Date {
