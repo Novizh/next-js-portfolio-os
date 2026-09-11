@@ -7,6 +7,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import { alpha } from "@mui/material/styles";
 import { IconExternalLink, IconMoodHeart } from "@tabler/icons-react";
 
 import { PROJECT_ASSOCIATION_LOGO_SIZE, PROJECTS } from "libs/constants/user";
@@ -106,7 +107,7 @@ export default function ProjectsApp() {
 
       <Box
         sx={{
-          backgroundColor: "rgba(0, 122, 51, 0.06)",
+          backgroundColor: ({ palette }) => alpha(palette.info.main, 0.06),
           borderRadius: 2,
           mt: 1,
           p: 2,
@@ -116,7 +117,7 @@ export default function ProjectsApp() {
           <Box
             sx={{
               alignItems: "center",
-              color: "success.main",
+              color: "info.main",
               display: "flex",
               flexShrink: 0,
               pt: "2px",

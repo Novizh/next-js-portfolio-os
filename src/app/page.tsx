@@ -496,7 +496,7 @@ export default function Landing() {
           position: "absolute",
         },
         background:
-          "radial-gradient(circle at 78% 20%, rgba(78, 226, 231, 0.48), transparent 31%), radial-gradient(circle at 20% 88%, rgba(105, 118, 255, 0.38), transparent 35%), linear-gradient(135deg, #0b1f3a 0%, #14536b 48%, #4eafb8 100%)",
+          "radial-gradient(circle at 78% 20%, rgba(202, 67, 75, 0.42), transparent 31%), radial-gradient(circle at 20% 88%, rgba(139, 35, 67, 0.42), transparent 35%), linear-gradient(135deg, #1f070d 0%, #56131f 48%, #8a3038 100%)",
         minHeight: "100vh",
         overflow: "hidden",
         position: "relative",
@@ -529,9 +529,9 @@ export default function Landing() {
         <Stack alignItems="center" direction="row" spacing={1.25}>
           <Box
             sx={{
-              background: "linear-gradient(135deg, #5ae0dd, #8ca8ff)",
+              background: "linear-gradient(135deg, #C9757C, #8A3038)",
               borderRadius: "50%",
-              boxShadow: "0 0 14px rgba(90, 224, 221, 0.5)",
+              boxShadow: "0 0 14px rgba(169, 76, 84, 0.55)",
               height: 10,
               width: 10,
             }}
@@ -566,6 +566,18 @@ export default function Landing() {
           </Typography>
         </Stack>
       </Stack>
+
+      <Box
+        className="desktop-window-workspace"
+        sx={{
+          bottom: 0,
+          left: 0,
+          pointerEvents: "none",
+          position: "absolute",
+          right: 0,
+          top: TOP_BAR_HEIGHT,
+        }}
+      />
 
       {DESKTOP_APPS.map((app) => {
         const Icon = app.icon;
@@ -754,17 +766,21 @@ export default function Landing() {
                     }}
                     onClick={() => handleDockClick(app.id)}
                   >
-                    <Icon color="#FFFFFF" size={25} stroke={1.8} />
+                    <Icon
+                      color={theme.palette.primary.main}
+                      size={25}
+                      stroke={2}
+                    />
                   </IconButton>
                   <Box
                     sx={{
                       backgroundColor: isActive
-                        ? "#8ff5ef"
+                        ? "#8A3038"
                         : "rgba(255,255,255,0.72)",
                       borderRadius: 99,
                       bottom: -3,
                       boxShadow: isActive
-                        ? "0 0 8px rgba(143,245,239,0.9)"
+                        ? "0 0 8px rgba(138,48,56,0.9)"
                         : "none",
                       height: 4,
                       left: "50%",

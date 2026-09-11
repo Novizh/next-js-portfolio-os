@@ -10,17 +10,17 @@ visual identity into a touch-first app launcher.
 ### Desktop experience
 
 - Draggable desktop shortcuts with grid snapping and selection states
-- Independent, resizable application windows
+- Independent, resizable application windows constrained below the status bar
 - Familiar minimize, maximize, restore, focus, and close interactions
-- Persistent dock that displays currently running apps
+- High-contrast dock for open apps
 - Active-window and running-app indicators
-- Atmospheric wallpaper, glass status bar, and live clock
+- Dark-red grid wallpaper, glass status bar, and live clock
 
 ### Mobile experience
 
 - Touch-friendly home-screen launcher
-- Consistent wallpaper, status chrome, and icon styling
-- Focused, scrollable app views with native back navigation
+- Consistent status chrome and icon styling
+- Focused, scrollable app views with in-app back navigation
 - Responsive content designed specifically for smaller screens
 
 ### Portfolio apps
@@ -49,19 +49,22 @@ visual identity into a touch-first app launcher.
 
 ### Requirements
 
-- Node.js
-- npm
+- Node.js 24 or later
+- [pnpm](https://pnpm.io/)
+
+This repository uses `pnpm-lock.yaml` as its dependency lockfile. Use pnpm for
+installation and scripts to keep dependency resolution consistent.
 
 ### Installation
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Development
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -69,7 +72,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ### Production build
 
 ```bash
-npm run build
+pnpm build
 ```
 
 The project uses `output: "export"` in `next.config.ts`, so the production build
@@ -77,16 +80,16 @@ is emitted as a static site in the `out/` directory.
 
 ## Available scripts
 
-| Command                     | Description                                            |
-| --------------------------- | ------------------------------------------------------ |
-| `npm run dev`               | Start the local development server                     |
-| `npm run dev:staging`       | Start development using the staging app environment    |
-| `npm run dev:production`    | Start development using the production app environment |
-| `npm run build`             | Create the static production build                     |
-| `npm run build:development` | Build using the development app environment            |
-| `npm run build:staging`     | Build using the staging app environment                |
-| `npm run build:production`  | Build using the production app environment             |
-| `npm run lint`              | Run ESLint and apply automatic fixes                   |
+| Command                  | Description                                            |
+| ------------------------ | ------------------------------------------------------ |
+| `pnpm dev`               | Start the local development server                     |
+| `pnpm dev:staging`       | Start development using the staging app environment    |
+| `pnpm dev:production`    | Start development using the production app environment |
+| `pnpm build`             | Create the static production build                     |
+| `pnpm build:development` | Build using the development app environment            |
+| `pnpm build:staging`     | Build using the staging app environment                |
+| `pnpm build:production`  | Build using the production app environment             |
+| `pnpm lint`              | Run ESLint and apply automatic fixes                   |
 
 ## Project structure
 
@@ -131,14 +134,15 @@ is located in `src/app/components/`.
 1. Push the repository to GitHub, GitLab, or Bitbucket.
 2. Import the repository into [Vercel](https://vercel.com/new).
 3. Keep the framework preset set to **Next.js**.
-4. Deploy using the default `npm run build` command.
+4. Configure `pnpm install --frozen-lockfile` as the install command and
+   `pnpm build` as the build command.
 
 Vercel will create preview deployments for branches and a production deployment
 for the configured production branch.
 
 ### Other static hosts
 
-Run `npm run build`, then deploy the generated `out/` directory to any static
+Run `pnpm build`, then deploy the generated `out/` directory to any static
 hosting provider, such as Cloudflare Pages, Netlify, GitHub Pages, or an Nginx
 server.
 

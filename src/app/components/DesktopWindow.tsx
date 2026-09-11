@@ -28,7 +28,7 @@ export default function DesktopWindow({
 
   return (
     <Rnd
-      bounds="parent"
+      bounds=".desktop-window-workspace"
       disableDragging={windowItem.maximized}
       dragHandleClassName={`window-drag-handle-${windowItem.id}`}
       enableResizing={!windowItem.maximized}
@@ -101,7 +101,7 @@ export default function DesktopWindow({
               sx={{
                 alignItems: "center",
                 backgroundColor: isActive
-                  ? "rgba(5, 160, 192, 0.12)"
+                  ? "rgba(138, 48, 56, 0.12)"
                   : "rgba(42, 45, 72, 0.06)",
                 borderRadius: 1,
                 display: "flex",
@@ -111,7 +111,7 @@ export default function DesktopWindow({
               }}
             >
               <AppIcon
-                color={isActive ? "#047890" : "#595B71"}
+                color={isActive ? "#8A3038" : "#595B71"}
                 size={15}
                 stroke={1.9}
               />

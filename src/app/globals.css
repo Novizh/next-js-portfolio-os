@@ -41,15 +41,15 @@ body {
   --breakpoint-3xl: 2560px;
 
   /* ================= PRIMARY ================= */
-  --color-primary-100: #CDECF2;
-  --color-primary-200: #9BD9E6;
-  --color-primary-300: #69C6D9;
-  --color-primary-400: #37B3CD;
-  --color-primary-500: #05A0C0;
-  --color-primary-600: #0590AD;
-  --color-primary-700: #0488A3;
-  --color-primary-800: #04809A;
-  --color-primary-900: #047890;
+  --color-primary-100: #F0D6D8;
+  --color-primary-200: #E1ADB1;
+  --color-primary-300: #C9757C;
+  --color-primary-400: #A94C54;
+  --color-primary-500: #8A3038;
+  --color-primary-600: #7C2B32;
+  --color-primary-700: #6E262D;
+  --color-primary-800: #602127;
+  --color-primary-900: #521D22;
 
   /* ================= SECONDARY ================= */
   --color-secondary-100: #E0E1E2;

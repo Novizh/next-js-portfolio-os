@@ -29,7 +29,7 @@ const MOBILE_SHELL_STYLES = {
     position: "absolute",
   },
   background:
-    "radial-gradient(circle at 84% 16%, rgba(78, 226, 231, 0.48), transparent 30%), radial-gradient(circle at 12% 84%, rgba(105, 118, 255, 0.42), transparent 36%), linear-gradient(150deg, #0b1f3a 0%, #14536b 52%, #4eafb8 100%)",
+    "radial-gradient(circle at 84% 16%, rgba(202, 67, 75, 0.42), transparent 30%), radial-gradient(circle at 12% 84%, rgba(139, 35, 67, 0.42), transparent 36%), linear-gradient(150deg, #1f070d 0%, #56131f 52%, #8a3038 100%)",
   display: "flex",
   flexDirection: "column",
   minHeight: "100dvh",
@@ -55,9 +55,9 @@ const MobileStatusBar = ({ currentTime }: { currentTime: Date | null }) => (
     <Stack alignItems="center" direction="row" spacing={0.8}>
       <Box
         sx={{
-          background: "linear-gradient(135deg, #5ae0dd, #8ca8ff)",
+          background: "linear-gradient(135deg, #C9757C, #8A3038)",
           borderRadius: "50%",
-          boxShadow: "0 0 12px rgba(90, 224, 221, 0.55)",
+          boxShadow: "0 0 12px rgba(169, 76, 84, 0.55)",
           height: 8,
           width: 8,
         }}
@@ -119,7 +119,7 @@ export default function MobileLauncher({
         <Stack
           sx={{
             backdropFilter: "blur(24px) saturate(170%)",
-            backgroundColor: "rgba(7, 25, 45, 0.42)",
+            backgroundColor: "rgba(31, 7, 13, 0.42)",
             borderBottom: "1px solid rgba(255,255,255,0.12)",
             position: "sticky",
             top: 0,
@@ -166,7 +166,7 @@ export default function MobileLauncher({
               backgroundColor: "rgba(250, 252, 253, 0.96)",
               border: "1px solid rgba(255,255,255,0.64)",
               borderRadius: 3,
-              boxShadow: "0 24px 60px rgba(5, 21, 45, 0.28)",
+              boxShadow: "0 24px 60px rgba(31, 7, 13, 0.28)",
               minHeight: "calc(100dvh - 112px)",
               overflow: "hidden",
               p: activeAppId === "about" ? 0 : 2,
@@ -255,7 +255,7 @@ export default function MobileLauncher({
                 sx={{
                   alignItems: "center",
                   display: "flex",
-                  filter: "drop-shadow(0 7px 8px rgba(2, 18, 38, 0.36))",
+                  filter: "drop-shadow(0 7px 8px rgba(31, 7, 13, 0.36))",
                   height: 58,
                   justifyContent: "center",
                   width: 58,
@@ -270,7 +270,7 @@ export default function MobileLauncher({
                   overflow: "hidden",
                   textAlign: "center",
                   textOverflow: "ellipsis",
-                  textShadow: "0 1px 4px rgba(0, 18, 38, 0.9)",
+                  textShadow: "0 1px 4px rgba(31, 7, 13, 0.9)",
                   whiteSpace: "nowrap",
                   width: "100%",
                 }}

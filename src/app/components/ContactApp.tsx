@@ -3,7 +3,8 @@
 import type { ChangeEvent, FormEvent, ReactNode } from "react";
 
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
-import { IconSend, IconSparkles } from "@tabler/icons-react";
+import { alpha } from "@mui/material/styles";
+import { IconBrandLinkedin, IconSend, IconSparkles } from "@tabler/icons-react";
 import { useEffect, useRef, useState } from "react";
 
 import { emailValidation } from "libs/helpers/emailValidation";
@@ -112,9 +113,9 @@ export default function ContactApp({ recipientEmail }: ContactAppProps) {
       <Stack
         spacing={0.75}
         sx={{
-          backgroundColor: "rgba(0, 122, 51, 0.06)",
+          backgroundColor: ({ palette }) => alpha(palette.info.main, 0.06),
           border: "1px dashed",
-          borderColor: "success.main",
+          borderColor: "info.main",
           borderRadius: 2,
           p: 2,
         }}
@@ -123,7 +124,7 @@ export default function ContactApp({ recipientEmail }: ContactAppProps) {
           <Box
             sx={{
               alignItems: "center",
-              color: "success.main",
+              color: "info.main",
               display: "flex",
             }}
           >
@@ -141,6 +142,22 @@ export default function ContactApp({ recipientEmail }: ContactAppProps) {
         <Typography color="text.secondary" variant="caption">
           Replies go to {recipientEmail}
         </Typography>
+        <Typography color="text.primary" variant="body2">
+          Or you can connect with me on{" "}
+          <span style={{ fontWeight: "bold" }}>LinkedIn</span>.
+        </Typography>
+        <Button
+          color="info"
+          component="a"
+          href="https://www.linkedin.com/in/naufalhrd/"
+          rel="noopener noreferrer"
+          startIcon={<IconBrandLinkedin size={16} />}
+          sx={{ alignSelf: "flex-start", mt: 0.5 }}
+          target="_blank"
+          variant="outlined"
+        >
+          Naufal Ardhi on LinkedIn
+        </Button>
       </Stack>
 
       <Field required label="Your name">

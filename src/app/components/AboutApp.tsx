@@ -1,4 +1,5 @@
 import { Avatar, Box, Chip, Divider, Stack, Typography } from "@mui/material";
+import { alpha } from "@mui/material/styles";
 import { IconMapPin, IconMoodWink } from "@tabler/icons-react";
 import { Fragment } from "react";
 import getCompanyPeriod from "libs/helpers/getCompanyPeriod";
@@ -282,7 +283,7 @@ export default function AboutApp() {
 
         <Box
           sx={{
-            backgroundColor: "rgba(0, 122, 51, 0.06)",
+            backgroundColor: ({ palette }) => alpha(palette.info.main, 0.06),
             borderRadius: 2,
             mt: 1,
             p: 2,
@@ -292,7 +293,7 @@ export default function AboutApp() {
             <Box
               sx={{
                 alignItems: "center",
-                color: "success.main",
+                color: "info.main",
                 display: "flex",
                 flexShrink: 0,
                 pt: "2px",
