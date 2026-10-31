@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=24"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "export NEXT_PUBLIC_APP_ENV=development && NEXT_PUBLIC_APP_MODE=light && next dev --turbopack",
