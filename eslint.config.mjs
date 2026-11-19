@@ -1,6 +1,8 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTypescript from "eslint-config-next/typescript";
 import pluginUnusedImports from "eslint-plugin-unused-imports";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -14,11 +16,9 @@ const eslintConfig = [
   {
     ignores: [".next/**", "out/**", "node_modules/**"],
   },
-  ...compat.extends(
-    "next/core-web-vitals",
-    "next/typescript",
-    "plugin:prettier/recommended",
-  ),
+  ...nextVitals,
+  ...nextTypescript,
+  ...compat.extends("plugin:prettier/recommended"),
   {
     plugins: {
       "unused-imports": pluginUnusedImports,
@@ -30,6 +30,9 @@ const eslintConfig = [
       "react/jsx-uses-react": "off",
       "react/react-in-jsx-scope": "off",
       "react-hooks/exhaustive-deps": "warn",
+      // Keep compiler diagnostics advisory while React Compiler is disabled.
+      "react-hooks/refs": "warn",
+      "react-hooks/set-state-in-effect": "warn",
       "jsx-a11y/click-events-have-key-events": "warn",
       "jsx-a11y/interactive-supports-focus": "warn",
       "no-unused-vars": "off",
